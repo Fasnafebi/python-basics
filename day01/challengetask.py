@@ -1,47 +1,29 @@
-shopping_list = []
+grades = {
+    'Alice': 85,
+    'Bob': 92,
+    'Charlie': 78
+}
 
-print("Shopping List Manager")
+print("Grade Tracker Students:", grades)
 
-while True:
-    print("\n\t1\tAdd item")
-    print("\t2\tRemove item")
-    print("\t3\tShow list")
-    print("\t4\tCheck item")
-    print("\t5\tExit")
+average = sum(grades.values()) / len(grades)
+print(f"Average grade: {average:.1f}")
 
-    choice = input("Choice: ")
+highest = max(grades, key=grades.get)
+lowest = min(grades, key=grades.get)
+print(f"Highest scorer: {highest} ({grades[highest]})")
+print(f"Lowest scorer: {lowest} ({grades[lowest]})")
 
-    if choice == "1":
-        item = input("Enter item: ")
-        shopping_list.append(item)
-        print(f"Added '{item}' to the list!")
+grades['Diana'] = 88
+print("\nAfter adding Diana:", grades)
 
-    elif choice == "2":
-        item = input("Enter item to remove: ")
-        if item in shopping_list:
-            shopping_list.remove(item)
-            print(f"Removed '{item}' from the list!")
-        else:
-            print(f"'{item}' is not in the list.")
+grades['Alice'] = 90
+print("After updating Alice's grade:", grades)
 
-    elif choice == "3":
-        if shopping_list:
-            print("Current Shopping List:")
-            for i, item in enumerate(shopping_list, start=1):
-                print(f"\t{i}. {item}")
-        else:
-            print("Your shopping list is empty.")
+average = sum(grades.values()) / len(grades)
+highest = max(grades, key=grades.get)
+lowest = min(grades, key=grades.get)
 
-    elif choice == "4":
-        item = input("Enter item to check: ")
-        if item in shopping_list:
-            print(f"'{item}' is in the shopping list.")
-        else:
-            print(f"'{item}' is not in the shopping list.")
-
-    elif choice == "5":
-        print("Exiting Shopping List Manager.")
-        break
-
-    else:
-        print("Invalid choice. Please select from 1 to 5.")
+print(f"\nUpdated average grade: {average:.1f}")
+print(f"Highest scorer: {highest} ({grades[highest]})")
+print(f"Lowest scorer: {lowest} ({grades[lowest]})")

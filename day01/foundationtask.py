@@ -1,5 +1,11 @@
-favorite_foods = ["pizza", "chocolate", "sushi", "ice cream", "Pasta"]
+animal_sounds = {
+    "dog": "bark",
+    "cat": "meow",
+    "cow": "moo",
+    "duck": "quack",
+    "lion": "roar"
+}
 
-print("My favorite foods:")
-for i, food in enumerate(favorite_foods, start=1):
-    print(f"\t{i}\t{food}")
+print("Animal Sounds:")
+for animal, sound in animal_sounds.items():
+    print(f"{animal} says {sound}")

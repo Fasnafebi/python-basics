@@ -1,6 +1,8 @@
-numbers = [1, 2, 3, 4, 5]
-print("Original list:", numbers)
+fruits = {'apple': 5, 'banana': 3}
+print("Original dictionary:", fruits)
 
-numbers.reverse()  
+fruits['orange'] = 8
+print("After adding orange:", fruits)
 
-print("Reversed list:", numbers)
+fruits['apple'] = 10
+print("After updating apple:", fruits)
