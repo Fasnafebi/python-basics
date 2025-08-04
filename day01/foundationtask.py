@@ -1,11 +1,6 @@
-animal_sounds = {
-    "dog": "bark",
-    "cat": "meow",
-    "cow": "moo",
-    "duck": "quack",
-    "lion": "roar"
-}
-
-print("Animal Sounds:")
-for animal, sound in animal_sounds.items():
-    print(f"{animal} says {sound}")
+def fahrenheit_to_celsius():
+    f = float(input("Enter temperature in Fahrenheit: "))
+    c = (f - 32) * 5 / 9
+    print(f"{f}°F is {round(c, 1)}°C")
+    
+fahrenheit_to_celsius()

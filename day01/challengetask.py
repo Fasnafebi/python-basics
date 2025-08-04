@@ -1,29 +1,41 @@
-grades = {
-    'Alice': 85,
-    'Bob': 92,
-    'Charlie': 78
-}
+def add(a, b):
+    return a + b
 
-print("Grade Tracker Students:", grades)
+def subtract(a, b):
+    return a - b
 
-average = sum(grades.values()) / len(grades)
-print(f"Average grade: {average:.1f}")
+def multiply(a, b):
+    return a * b
 
-highest = max(grades, key=grades.get)
-lowest = min(grades, key=grades.get)
-print(f"Highest scorer: {highest} ({grades[highest]})")
-print(f"Lowest scorer: {lowest} ({grades[lowest]})")
+def divide(a, b):
+    if b == 0:
+        return "Error: Cannot divide by zero"
+    return a / b
 
-grades['Diana'] = 88
-print("\nAfter adding Diana:", grades)
+def calculator():
+    print("Simple Calculator")
+    print("\t1\tAdd")
+    print("\t2\tSubtract")
+    print("\t3\tMultiply")
+    print("\t4\tDivide")
+    
+    choice = input("Choose operation: ")
 
-grades['Alice'] = 90
-print("After updating Alice's grade:", grades)
+    if choice in ['1', '2', '3', '4']:
+        a = float(input("Enter first number: "))
+        b = float(input("Enter second number: "))
 
-average = sum(grades.values()) / len(grades)
-highest = max(grades, key=grades.get)
-lowest = min(grades, key=grades.get)
+        if choice == '1':
+            result = add(a, b)
+        elif choice == '2':
+            result = subtract(a, b)
+        elif choice == '3':
+            result = multiply(a, b)
+        elif choice == '4':
+            result = divide(a, b)
 
-print(f"\nUpdated average grade: {average:.1f}")
-print(f"Highest scorer: {highest} ({grades[highest]})")
-print(f"Lowest scorer: {lowest} ({grades[lowest]})")
+        print(f"Result: {result}")
+    else:
+        print("Invalid choice.")
+
+calculator()
